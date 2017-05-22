@@ -6,16 +6,20 @@
   with_items:
     - python-pip
 
-- shell: ls /usr/local/lib/python2.7/dist-packages/ | grep requests*
-  register: directory_to_clean
-  ignore_errors: yes
+# New task:
+- name: Make sure pip upgraded
+  command: easy_install -U pip
 
-- debug:
-    msg: "Directories : {{ item }}"
-  with_items: directory_to_clean.stdout_lines
-  when: directory_to_clean.stdout_lines is defined
+#- shell: ls /usr/local/lib/python2.7/dist-packages/ | grep requests*
+#  register: directory_to_clean
+#  ignore_errors: yes
 
-- file:
-    name: "{{item}}"
-    state: absent
-  with_items: directory_to_clean.stdout_lines
+#- debug:
+#    msg: "Directories : {{ item }}"
+#  with_items: directory_to_clean.stdout_lines
+#  when: directory_to_clean.stdout_lines is defined
+
+#- file:
+#    name: "{{item}}"
+#    state: absent
+#  with_items: directory_to_clean.stdout_lines
