@@ -6,8 +6,8 @@
   failed_when: false
 
 - name: Delete existing docker-compose version if it's different.
-  file:
-    path: "{{ docker_compose_path }}"
+  pip:
+    name: docker-compose
     state: absent
   when: >
     docker_compose_current_version.stdout is defined
