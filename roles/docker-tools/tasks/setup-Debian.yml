@@ -10,6 +10,8 @@
   register: directory_to_clean
   ignore_errors: yes
 
-- file: name={{item}} state=absent
-  recurse: yes
-  with_items: directory_to_clean.stdout_lines
+- file:
+    name: {{item}}
+    state: absent
+    recurse: yes
+    with_items: directory_to_clean.stdout_lines
