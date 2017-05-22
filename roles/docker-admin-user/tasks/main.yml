@@ -1,0 +1,5 @@
+---
+- user:
+    name: "{{admin_name}}"
+    comment: "Docker admin"
+    uid: 1050
