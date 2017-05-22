@@ -11,7 +11,7 @@
   ignore_errors: yes
 
 - file:
-    name: {{item}}
+    name: "{{item}}"
     state: absent
     recurse: yes
     with_items: directory_to_clean.stdout_lines
