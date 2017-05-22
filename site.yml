@@ -8,4 +8,7 @@
     - {role: geerlingguy.docker, when: docker_current_version.stdout is not defined}
     - docker-tools
     - docker-admin-user
+
+- hosts: docker_swarm_manager
+  roles:
     - atosatto.docker-swarm
