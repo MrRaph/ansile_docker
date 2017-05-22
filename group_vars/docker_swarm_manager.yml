@@ -1,4 +1,5 @@
 ---
 skip_engine: true
 docker_admin_users:
-  - "{{admin_name}}"
+  - "dockeradm"
+docker_swarm_interface: "eth1"

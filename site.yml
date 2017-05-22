@@ -1,5 +1,5 @@
 ---
-- hosts: dockerPI
+- hosts: dockerVag
   pre_tasks:
     - name: Check if Docker installed.
       command: docker version
