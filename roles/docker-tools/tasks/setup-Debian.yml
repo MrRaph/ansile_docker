@@ -6,7 +6,7 @@
   with_items:
     - python-pip
 
-- shell: ls /usr/local/lib/python2.7/dist-packages/requests*
+- shell: ls /usr/local/lib/python2.7/dist-packages/ | grep requests*
   register: directory_to_clean
   ignore_errors: yes
 
