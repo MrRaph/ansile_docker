@@ -10,8 +10,12 @@
   register: directory_to_clean
   ignore_errors: yes
 
+- debug:
+    msg: "Directories : {{ item }}"
+  with_items: directory_to_clean.stdout_lines
+  when: directory_to_clean.stdout_lines is defined
+
 - file:
     name: "{{item}}"
     state: absent
-    recurse: yes
   with_items: directory_to_clean.stdout_lines
