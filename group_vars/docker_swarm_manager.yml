@@ -1,2 +1,4 @@
 ---
 skip_engine: true
+docker_admin_users:
+  - "{{admin_name}}"
