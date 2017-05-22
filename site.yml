@@ -1,0 +1,9 @@
+---
+- hosts: dockerPI
+  pre_tasks:
+    - name: Check if Docker installed.
+      command: docker version
+      register: docker_current_version
+  roles:
+    - {role: geerlingguy.docker, when: docker_current_version.stdout is not defined}
+    - docker-tools
